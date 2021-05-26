@@ -1,24 +1,3 @@
-# README
+# Welcome to Repertoire
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Repertoire is web application designed as a community network for performing artists and performing arts organizations. This will be a place where artists can showcase their repertoire, share their achievements and affiliated organizations and track their progress. Organizations will be able to share casting and audition calls, showcase their awards and broadcast information about their past, current and upcoming seasons.
