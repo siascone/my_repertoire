@@ -1,6 +1,6 @@
 # Welcome to Repertoire
 
-Repertoire is web application designed as a community network for performing artists. This will be a place where artists can showcase their repertoire, share their achievements and affiliated organizations and track their progress. 
+Repertoire is web application designed as a supportive community network for performing artists. This will be a place where artists can showcase their repertoire, share their achievements and affiliated organizations and track their progress. 
 
 
 
