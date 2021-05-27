@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 
 import { logout } from '../../actions/session_actions';
-import Greeting from './greeting';
+import Greeting from './header';
 
 const mSTP = ({ session, entities: { users }}) => {
     return {
-        currentUser: user[session.id]
+        currentUser: users[session.id]
     };
 };
 
