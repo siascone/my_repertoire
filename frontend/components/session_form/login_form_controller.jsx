@@ -5,10 +5,9 @@ import { login } from '../../actions/session_actions';
 import SessionForm from './session_form';
 
 const mSTP = (state, ownprops) => {
-    debugger
     return {
         errors: state.errors.session,
-        formType: login,
+        formType: 'Login',
         navLink: <Link to="/signup">Sign Up</Link>
     };
 };

@@ -9,11 +9,17 @@
 User.delete_all
 
 u1 = User.create!(
+  fname: 'Guest',
+  lname: 'Guestington',
+  email: 'guest.guestington@guest.com',
   username: 'guest',
   password: 'password'
 )
 
 u2 = User.create!(
+  fname: 'User',
+  lname: 'Usington',
+  email: 'user.usington@user.com',
   username: 'username',
   password: 'password'
 )

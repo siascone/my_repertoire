@@ -25,7 +25,6 @@ class SessionForm extends React.Component {
     }
 
     renderErrors() {
-        debugger;
         return (
             <ul>
                 {this.props.errors.map((error, i) => (
@@ -42,7 +41,7 @@ class SessionForm extends React.Component {
         let fname = <div></div>;
         let lname = <div></div>;
 
-        if (this.props.formType === 'signup') {
+        if (this.props.formType === 'Sign Up!') {
             fname = <div>
                         <label>First Name:
                                 <input type="text"
@@ -64,9 +63,6 @@ class SessionForm extends React.Component {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    Welcome to myRepertoire!
-                <br />
-                Please {this.props.formType} or {this.props.navLink}
                     {this.renderErrors()}
                     <div>
                         {fname}

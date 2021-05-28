@@ -11,20 +11,18 @@ import SignUpFormContainer from './session_form/signup_form_container';
 import LoginFormContainer from './session_form/login_form_controller';
 import SplashContainer from './splash/splash_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import Modal from './modal/modal'
 
 
 const App = () => {
+    
     return (
         <div>
+            <Modal />
             <header>
-                <Link to="/" >
-                    myRepertoire
-            </Link>
                 <GreetingContainer />
             </header>
             <Switch>
-                <AuthRoute exact path="/login" component={LoginFormContainer} />
-                <AuthRoute exact path="/signup" component={SignUpFormContainer} />
                 <Route exact path='/' component={SplashContainer} />
                 <Redirect to='/' />
             </Switch>

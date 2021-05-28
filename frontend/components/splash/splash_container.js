@@ -2,9 +2,8 @@ import { connect } from "react-redux";
 import Splash from './splash';
 
 const mSTP = (state) => {
-    debugger
     return {
-        errors: state.errors.session
+        state: state
     }
 };
 

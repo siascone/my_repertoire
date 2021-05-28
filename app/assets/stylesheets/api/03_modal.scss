@@ -1,0 +1,25 @@
+.modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position:absolute;
+    z-index: 10;
+    // top: 100px;
+    background-color: rgba(0, 0, 0, .25);
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+}
+
+.modal-component {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    background-color: lightgray;
+    border: solid 2px brown;
+    border-radius: 6px;
+    height: 150px;
+    width: 250px;
+
+}

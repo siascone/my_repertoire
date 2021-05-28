@@ -14,9 +14,15 @@ class Splash extends React.Component {
 
     render() {
         return (
-            <div>
-                <h1>Welcome to myRepertoire</h1>
-                <SessionForm errors={this.props.errors}/>
+            <div className='splash'>
+                <h1 className='welcome'>Welcome to myRepertoire</h1>
+                <p className='splash-blurb'>
+                    Repertoire is web application designed as a supportive 
+                    community network for performing artists. This will be a 
+                    place where artists can showcase their repertoire, share 
+                    their achievements and affiliated organizations and track 
+                    their progress.
+                </p>
             </div>
         )
     }
