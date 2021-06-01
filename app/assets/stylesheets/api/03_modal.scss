@@ -17,9 +17,29 @@
     justify-content: center;
     margin: 0 auto;
     background-color: lightgray;
-    border: solid 2px brown;
+    border: solid 2px gray;
     border-radius: 6px;
-    height: 150px;
-    width: 250px;
+    min-height: 200px;
+    min-width: 250px;
+}
 
+.login-or-signup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 0 10px 10px 10px;
+    border: 2px solid gray;
+    border-radius: 6px;
+    padding: 5px;
+}
+
+.login-or-signup p {
+    margin: 5px;
+}
+
+.login-or-signup-input {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
 }

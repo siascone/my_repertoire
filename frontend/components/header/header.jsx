@@ -7,18 +7,18 @@ const Greeting = ({ currentUser, logout, openModal}) => {
             <Link to="/" className="header-link">
                 <p>myRepertoire</p>
             </Link>
-            <input type='submit' onClick={openModal} value='Login' />
+            <input type='submit' className='header-session-button' onClick={openModal} value='Login' />
         </div>
     );
 
     const personalGreeting = () => (
-        <div className="header">
+        <div className="header-logged-in">
             <Link to="/" className="header-link">
                 <h1>myRepertoire</h1>
             </Link>
-            <div>
+            <div className='header-greeting'>
                 <h2>Hi, {currentUser.username}</h2>
-                <button onClick={logout}>Log Out</button>
+                <button className='header-session-button' onClick={logout}>Log Out</button>
             </div>
         </div>
     );

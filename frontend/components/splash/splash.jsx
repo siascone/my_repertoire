@@ -13,9 +13,10 @@ class Splash extends React.Component {
     }
 
     render() {
+
         return (
             <div className='splash'>
-                <h1 className='welcome'>Welcome to myRepertoire</h1>
+                <p className='welcome'>Welcome to myRepertoire</p>
                 <p className='splash-blurb'>
                     myRepertoire is web application designed as a supportive 
                     community network for performing artists. This will be a 

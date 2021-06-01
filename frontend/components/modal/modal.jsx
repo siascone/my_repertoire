@@ -21,26 +21,26 @@ function Modal({modal, closeModal, openSignupModal, openLoginModal}) {
             return null;
     }
 
-    let option = <div></div>;
+    let modalType = <div></div>;
     if (modal === 'login') {
-        option = <div>
-            Don't have an account?
-                <input type='submit' onClick={e => { e.preventDefault(); e.stopPropagation(); openSignupModal() }} value='Sign Up!' />
-        </div>
+        modalType = <div className="login-or-signup">
+                        <p>Don't have an account yet?</p>
+                        <input className='login-or-signup-input' type='submit' onClick={e => { e.preventDefault(); e.stopPropagation(); openSignupModal() }} value='Sign Up!' />
+                    </div>
     }
 
     if (modal === 'signup') {
-        option = <div>
-            Already have an account?
-                <input type='submit' onClick={e => { e.preventDefault(); e.stopPropagation(); openLoginModal() }} value='Login' />
-        </div>
+        modalType = <div className='login-or-signup'>
+                        <p>Already have an account?</p>
+                        <input className='login-or-signup-input' type='submit' onClick={e => { e.preventDefault(); e.stopPropagation(); openLoginModal() }} value='Login' />
+                    </div>
     }
 
     return (
         <div className='modal' onClick={closeModal}>
             <div className='modal-component' onClick={e => e.stopPropagation()}>
                 {component}
-                {option}
+                {modalType}
             </div>
        </div>
     )

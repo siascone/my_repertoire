@@ -23,9 +23,9 @@ class SessionForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        debugger;
         const user = Object.assign({}, this.state);
         this.props.submitForm(user);
+        // Add .then to handle reset and modal close or render errors
         this.resetForm();
         this.props.closeModal();
     }
@@ -69,33 +69,36 @@ class SessionForm extends React.Component {
 
         if (this.props.formType === 'Sign Up!') {
             fname = <div>
-                        <label>First Name:
-                                <input type="text"
+                        <div className='session-input-container'>
+                            <p>First Name:</p>
+                            <input type="text"
                                 value={this.state.fname}
                                 onChange={this.update('fname')}
                             />
-                        </label>
+                        </div>
                     </div>
             lname = <div>
-                        <label>Last Name:
-                                <input type="text"
+                        <div className='session-input-container'>
+                            <p>Last Name:</p>
+                            <input type="text"
                                 value={this.state.lname}
                                 onChange={this.update('lname')}
                             />
-                        </label>
+                        </div>
                     </div>          
             email = <div>
-                        <label>Email:
-                                <input type="text"
+                        <div className='session-input-container'>
+                            <p>Email:</p>
+                            <input type="text"
                                 value={this.state.email}
                                 onChange={this.update('email')}
                             />
-                        </label>
+                        </div>
                     </div>          
         }
 
         return (
-            <div>
+            <div className='session-form'>
                 <form onSubmit={this.handleSubmit}>
                     {this.renderErrors()}
                     <div>
@@ -103,25 +106,29 @@ class SessionForm extends React.Component {
                         {lname}
                         {email}
                         <div>
-                            <label>Username:
+                            <div className='session-input-container'>
+                                <p>Username:</p>
                                 <input type="text"
                                     value={this.state.username}
                                     onChange={this.update('username')}
                                 />
-                            </label>
+                            </div>
                         </div>
                         <div>
-                            <label>Password:
+                            <div className='session-input-container'>
+                                <p>Password:</p>
                                 <input type="password"
                                     value={this.state.password}
                                     onChange={this.update('password')}
                                 />
-                            </label>
+                            </div>
                         </div>
-                        <input type="submit" value={this.props.formType} />
+                        <div className='login-buttons'>
+                            <input type="submit" className='session-form-submit' value={this.props.formType} />
+                            <button onClick={this.demoLogin}>Demo Login</button>
+                        </div>
                     </div>
                 </form>
-                <button onClick={this.demoLogin}>Demo Login</button>
             </div>
         )
 

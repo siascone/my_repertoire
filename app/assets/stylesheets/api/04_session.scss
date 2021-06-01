@@ -1,0 +1,33 @@
+.session-form {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid gray;
+    border-radius: 6px;
+    padding: 5px;
+}
+
+.session-input-container {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+.session-form-submit {
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+
+.login-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.login-buttons input, .login-buttons button {
+    height: 20px;
+    margin-top: 3px;
+}
+
+.login-buttons button {
+    margin-right: 5px;
+}

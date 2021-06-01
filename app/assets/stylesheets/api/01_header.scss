@@ -1,10 +1,37 @@
 .header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: gray;
+    color: white;
+    height: 40px;
+}
+
+.header-logged-in {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: gray;
+    color: white;
+    height: 40px;
+}
+
+.header-link {
+    text-decoration: none;
     color: white;
 }
 
-.login {
+.header-link :hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.header-greeting {
+    display: flex;
+    align-items: center;
+}
+
+.header-session-button, .header-link {
     margin: 5px;
+    cursor: pointer;
 }
