@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { signup } from '../../actions/session_actions';
+import { signup, login } from '../../actions/session_actions';
+import { closeModal } from '../../actions/modal_actions'
 import SessionForm from './session_form';
 
 const mSTP = (state, ownprops) => {
@@ -15,6 +16,9 @@ const mSTP = (state, ownprops) => {
 const mDTP = dispatch => {
     return {
         submitForm: (user) => dispatch(signup(user)),
+        login: user => dispatch(login(user)),
+        closeModal: () => dispatch(closeModal())
+
     };
 };
 

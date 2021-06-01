@@ -11,6 +11,8 @@ class SessionForm extends React.Component {
             lname: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.resetForm = this.resetForm.bind(this);
+        this.demoLogin = this.demoLogin.bind(this);
     }
 
     update(field) {
@@ -21,8 +23,30 @@ class SessionForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        debugger;
         const user = Object.assign({}, this.state);
         this.props.submitForm(user);
+        this.resetForm();
+        this.props.closeModal();
+    }
+
+    resetForm() {
+        this.setState({
+                username: '',
+                passowrd: '',
+                email: '',
+                fname: '',
+                lname: ''
+        })
+    }
+
+    demoLogin(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        let user = { username: 'username', password: 'password' }
+        this.props.login(user);
+        this.props.closeModal();
+
     }
 
     renderErrors() {
@@ -97,6 +121,7 @@ class SessionForm extends React.Component {
                         <input type="submit" value={this.props.formType} />
                     </div>
                 </form>
+                <button onClick={this.demoLogin}>Demo Login</button>
             </div>
         )
 
