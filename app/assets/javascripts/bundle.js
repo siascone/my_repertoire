@@ -782,7 +782,7 @@ var Splash = /*#__PURE__*/function (_React$Component) {
         className: "welcome"
       }, "Welcome to myRepertoire"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "splash-blurb"
-      }, "Repertoire is web application designed as a supportive community network for performing artists. This will be a place where artists can showcase their repertoire, share their achievements and affiliated organizations and track their progress."));
+      }, "myRepertoire is web application designed as a supportive community network for performing artists. This will be a place where artists can showcase their repertoire, share their achievements and affiliated organizations and track their progress."));
     }
   }]);
 
