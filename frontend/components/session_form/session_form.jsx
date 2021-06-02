@@ -1,4 +1,5 @@
 import React from 'react';
+// import { debug } from 'webpack';
 
 class SessionForm extends React.Component {
     constructor(props) {
@@ -23,9 +24,10 @@ class SessionForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        e.stopPropagation();
         const user = Object.assign({}, this.state);
-        this.props.submitForm(user);
-        // Add .then to handle reset and modal close or render errors
+        this.props.submitForm(user)
+        // deal with .then to handle errors
         this.resetForm();
         this.props.closeModal();
     }
@@ -46,7 +48,6 @@ class SessionForm extends React.Component {
         let user = { username: 'username', password: 'password' }
         this.props.login(user);
         this.props.closeModal();
-
     }
 
     renderErrors() {

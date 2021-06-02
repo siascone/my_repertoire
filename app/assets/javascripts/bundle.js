@@ -549,7 +549,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-
+ // import { debug } from 'webpack';
 
 var SessionForm = /*#__PURE__*/function (_React$Component) {
   _inherits(SessionForm, _React$Component);
@@ -588,8 +588,9 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
     key: "handleSubmit",
     value: function handleSubmit(e) {
       e.preventDefault();
+      e.stopPropagation();
       var user = Object.assign({}, this.state);
-      this.props.submitForm(user); // Add .then to handle reset and modal close or render errors
+      this.props.submitForm(user); // deal with .then to handle errors
 
       this.resetForm();
       this.props.closeModal();
