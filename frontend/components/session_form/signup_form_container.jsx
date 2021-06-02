@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom';
 import { signup, login } from '../../actions/session_actions';
 import { closeModal } from '../../actions/modal_actions'
 import SessionForm from './session_form';
+// import {withRouter} from './react-router-dom';
 
-const mSTP = (state, ownprops) => {
+const mSTP = (state, ownProps) => {
     return {
         errors: state.errors.session,
         formType: 'Sign Up!',

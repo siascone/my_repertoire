@@ -1,5 +1,4 @@
 import React from 'react';
-// import { debug } from 'webpack';
 
 class SessionForm extends React.Component {
     constructor(props) {
@@ -27,6 +26,7 @@ class SessionForm extends React.Component {
         e.stopPropagation();
         const user = Object.assign({}, this.state);
         this.props.submitForm(user)
+            .then((user) => this.props.history.push(`users/${user.id}`));
         // deal with .then to handle errors
         this.resetForm();
         this.props.closeModal();
@@ -46,7 +46,8 @@ class SessionForm extends React.Component {
         e.preventDefault();
         e.stopPropagation();
         let user = { username: 'username', password: 'password' }
-        this.props.login(user);
+        this.props.login(user)
+            .then((user) => this.props.history.push(`users/${user.id}`));;
         this.props.closeModal();
     }
 

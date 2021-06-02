@@ -17,7 +17,7 @@ const Greeting = ({ currentUser, logout, openModal}) => {
                 <h1>myRepertoire</h1>
             </Link>
             <div className='header-greeting'>
-                <h2>Hi, {currentUser.username}</h2>
+                <h2>Hi, {currentUser.fname}</h2>
                 <button className='header-session-button' onClick={logout}>Log Out</button>
             </div>
         </div>

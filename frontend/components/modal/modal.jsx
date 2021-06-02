@@ -1,10 +1,11 @@
 import React from 'react';
 import {closeModal, openModal} from '../../actions/modal_actions';
 import {connect} from 'react-redux';
+import {withRouter} from 'react-router';
 import LoginContainer from '../session_form/login_form_controller';
 import SignupContainer from '../session_form/signup_form_container';
 
-function Modal({modal, closeModal, openSignupModal, openLoginModal}) {
+function Modal({modal, closeModal, openSignupModal, openLoginModal, history}) {
     if (!modal) {
         return null;
     }
@@ -12,10 +13,10 @@ function Modal({modal, closeModal, openSignupModal, openLoginModal}) {
 
     switch (modal) {
         case "login":
-            component = <LoginContainer />
+            component = <LoginContainer history={history}/>
             break;
         case 'signup':
-            component = <SignupContainer />
+            component = <SignupContainer history={history}/>
             break;
         default:
             return null;
@@ -46,9 +47,12 @@ function Modal({modal, closeModal, openSignupModal, openLoginModal}) {
     )
 }
 
-const mSTP = state => ({
-    modal: state.ui.modal
-});
+const mSTP = (state, ownProps) => {
+    return {
+        modal: state.ui.modal,
+        history: ownProps.history
+    }
+};
 
 const mDTP = dispatch => ({
     closeModal: () => dispatch(closeModal()),
@@ -56,4 +60,4 @@ const mDTP = dispatch => ({
     openLoginModal: () => dispatch(openModal('login'))
 })
 
-export default connect(mSTP, mDTP)(Modal)
+export default withRouter(connect(mSTP, mDTP)(Modal))
