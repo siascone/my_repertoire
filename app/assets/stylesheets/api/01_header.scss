@@ -40,21 +40,25 @@
 }
 
 .login-button {
-    background-color: cadetblue;
-    border: solid 3px white;
+    // background-color: rgb(116, 194, 197);
+    // border: solid 2px white;
     margin-right: 5px;
 }
 
-.signup-button {
+.signup-button, .login-button {
     background: white;
-    border: solid 3px rgb(75, 126, 128);
+    border: solid 2px rgb(116, 194, 197);
 }
 
-.login-button:hover {
-    background-color: rgb(75, 126, 128);
-}
-.signup-button:hover {
-    background: rgb(219, 218, 218);
+// .login-button:hover {
+//     background-color: white;
+//     border: solid 2px rgb(116, 194, 197);
+
+// }
+.signup-button:hover, .login-button:hover {
+    background: rgb(116, 194, 197);
+    border: solid 2px white;
+
 }
 
 .header-link {
