@@ -1,10 +1,12 @@
 .session-form {
-    margin: 10px;
+    margin: 60px auto;
     display: flex;
     flex-direction: column;
     border: 2px solid gray;
     border-radius: 6px;
     padding: 5px;
+    // height: 700px;
+    max-width: 480px;
 }
 
 .session-input-container {
@@ -13,14 +15,45 @@
     margin: 5px;
 }
 
-.session-form-submit {
-    margin-bottom: 5px;
-    margin-left: 5px;
+.session-input {
+    height: 40px;
+    border-radius: 6px;
+    padding: 10px 16px;
+    border: 2px gray solid;
+    margin: 4px 0;
+    font-size: 18px;
 }
 
 .login-buttons {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+}
+
+.session-input:hover {
+    cursor: text;
+    border: 2px solid cadetblue;
+}
+
+.session-form-submit {
+    height: 64px !important;
+    border-radius: 6px;
+    padding: 10px 16px !important;
+    border: 2px gray solid;
+    margin: 4px 5px !important;
+    font-size: 18px;
+    width: 100%;
+    background-color: cadetblue;
+}
+
+
+.login-option, .guest-login {
+    text-decoration: none;
+    color: cadetblue;
+}
+
+.guest-login:hover {
+    cursor: pointer;
 }
 
 .login-buttons input, .login-buttons button {
@@ -30,4 +63,36 @@
 
 .login-buttons button {
     margin-right: 5px;
+}
+
+.login-or-signup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 8px 5px 8px 5px;
+    border: none;
+    // border: 2px solid gray;
+    border-radius: 6px;
+    padding: 5px;
+}
+
+.login-or-signup p {
+    margin: 5px;
+}
+
+.login-or-signup-input {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.tagline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4px auto;
+    font-size: 28px;
+    font-weight: lighter;
+    color: gray;
 }

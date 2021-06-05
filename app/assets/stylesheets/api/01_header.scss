@@ -2,28 +2,86 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: gray;
-    color: white;
-    height: 40px;
+    background-color: cadetblue;
+    color: black;
+    height: 60px;
 }
 
-.header-logged-in {
+.header-left, .header-right, .header-center {
+    width: 33.3333%;
+}
+
+.header-left {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: gray;
-    color: white;
-    height: 40px;
+    justify-content: left;
+    margin-left: 10px;
+
+}
+
+.header-center {
+    display: flex;
+    justify-content: center;
+}
+
+.header-right {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10px;
+}
+
+.login-button, .signup-button {
+    text-decoration: none;
+    color: black;
+    line-height: 29px;
+    width: 75px;
+    text-align: center;
+    border-radius: 6px;
+    
+}
+
+.login-button {
+    // background-color: rgb(116, 194, 197);
+    // border: solid 2px white;
+    margin-right: 5px;
+}
+
+.signup-button, .login-button {
+    background: white;
+    border: solid 2px rgb(116, 194, 197);
+}
+
+// .login-button:hover {
+//     background-color: white;
+//     border: solid 2px rgb(116, 194, 197);
+
+// }
+.signup-button:hover, .login-button:hover {
+    background: rgb(116, 194, 197);
+    border: solid 2px white;
+
 }
 
 .header-link {
+    display: flex;
+    align-items: center;
     text-decoration: none;
-    color: white;
+    color: black;
+    // font-family: Bradley Hand, cursive
+}
+
+.header-link > p {
+    // margin: 5px;
 }
 
 .header-link :hover {
-    text-decoration: underline;
+    // text-decoration: underline;
     cursor: pointer;
+}
+
+.header-logo {
+    height: 40px;
+    width: 40px;
+    margin: 5px;
 }
 
 .header-greeting {

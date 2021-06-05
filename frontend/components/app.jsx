@@ -6,22 +6,26 @@ import {
     Redirect
 } from 'react-router-dom';
 
-import GreetingContainer from './header/header_container';
+import HeaderContainer from './header/header_container';
 import SplashContainer from './splash/splash_container';
 import ProfileContainer from './profile/profile_container';
+import SignupFormContainer from './session_form/signup_form_container';
+import LoginFormContainer from './session_form/login_form_controller';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import Modal from './modal/modal'
+// import Modal from './modal/modal'
 
 
 const App = () => {
     
     return (
         <div>
-            <Modal />
+            {/* <Modal /> */}
             <header>
-                <GreetingContainer />
+                <HeaderContainer />
             </header>
             <Switch>
+                <AuthRoute eaxct path='/login' component={LoginFormContainer} />
+                <AuthRoute eaxct path='/signup' component={SignupFormContainer} />
                 <Route exact path='/' component={SplashContainer} />
                 <ProtectedRoute eaxct path='/users/:userId' component={ProfileContainer} />
                 <Redirect to='/' />
