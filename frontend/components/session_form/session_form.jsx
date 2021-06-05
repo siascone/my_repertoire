@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 class SessionForm extends React.Component {
     constructor(props) {
@@ -99,6 +100,19 @@ class SessionForm extends React.Component {
                     </div>          
         }
 
+        let option = <div></div>;
+        if (this.props.formType === 'Login') {
+            option = <div className="login-or-signup">
+                        <p>Don't have an account yet? <Link className='login-option' to="/signup">Sign up!</Link></p>
+                    </div>
+        }
+
+        if (this.props.formType === 'Sign Up!') {
+            option = <div className='login-or-signup'>
+                        <p>Already have an account? <Link className='login-option' to="/login">Login</Link></p>
+                    </div>
+        }
+
         return (
             <div className='session-form'>
                 <form onSubmit={this.handleSubmit}>
@@ -130,6 +144,7 @@ class SessionForm extends React.Component {
                             <button onClick={this.demoLogin}>Demo Login</button>
                         </div>
                     </div>
+                    {option}
                 </form>
             </div>
         )

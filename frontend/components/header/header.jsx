@@ -4,20 +4,38 @@ import { Link } from 'react-router-dom';
 const Greeting = ({ currentUser, logout, openModal}) => {
     const sessionLinks = () => (
         <div className="header">
-            <Link to="/" className="header-link">
-                <p>myRepertoire</p>
-            </Link>
-            <input type='submit' className='header-session-button' onClick={openModal} value='Login' />
+            <div className='header-left'>
+                {/* Other Navigations Coming */}
+            </div>
+            <div className='header-center'>
+                <Link to="/" className="header-link">
+                    <img className="header-logo" src={window.logoCircle} alt="" />
+                    <p>myRepertoire</p>
+                </Link>
+            </div>
+            <div className='header-right'>
+                <Link className='login-button' to="/login">Login</Link>
+                <Link className='signup-button' to="/signup">Sign Up!</Link>
+            </div>
+            
         </div>
     );
 
     const personalGreeting = () => (
-        <div className="header-logged-in">
-            <Link to="/" className="header-link">
-                <h1>myRepertoire</h1>
-            </Link>
-            <div className='header-greeting'>
-                <h2>Hi, {currentUser.fname}</h2>
+        <div className="header">
+            <div className='header-left'>
+                {/* Other Navigations Coming */}
+            </div>
+            <div className='header-center'>
+                <Link to="/" className="header-link">
+                    <img className="header-logo" src={window.logoCircle} alt="" />
+                    <h1>myRepertoire</h1>
+                </Link>
+            </div>
+            <div className='header-right'>
+                <div className='user-dropdown'>
+                    {currentUser.username}
+                </div>
                 <button className='header-session-button' onClick={logout}>Log Out</button>
             </div>
         </div>

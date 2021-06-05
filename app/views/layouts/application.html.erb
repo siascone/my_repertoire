@@ -4,9 +4,12 @@
     <title>myRepertoire</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    
+    <%= favicon_link_tag 'logo-circle.png' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script>
+      window.logoCircle = '<%= image_url('logo-circle.png') %>'
+    </script>
   </head>
 
   <body>
