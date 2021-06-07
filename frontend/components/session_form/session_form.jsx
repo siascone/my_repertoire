@@ -16,6 +16,10 @@ class SessionForm extends React.Component {
         this.demoLogin = this.demoLogin.bind(this);
     }
 
+    // componentDidMount() {
+
+    // }
+
     update(field) {
         return e => this.setState({
             [field]: e.currentTarget.value
@@ -25,8 +29,8 @@ class SessionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         e.stopPropagation();
-        const user = Object.assign({}, this.state);
-        this.props.submitForm(user)
+        const user1 = Object.assign({}, this.state);
+        this.props.submitForm(user1)
             .then((user) => this.props.history.push(`users/${user.id}`));
         // deal with .then to handle errors
         this.resetForm();
