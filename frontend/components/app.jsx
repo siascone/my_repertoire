@@ -19,15 +19,14 @@ const App = () => {
     
     return (
         <div>
-            {/* <Modal /> */}
             <header>
                 <HeaderContainer />
             </header>
             <Switch>
-                <AuthRoute eaxct path='/login' component={LoginFormContainer} />
-                <AuthRoute eaxct path='/signup' component={SignupFormContainer} />
+                <AuthRoute exact path='/login' component={LoginFormContainer} />
+                <AuthRoute exact path='/signup' component={SignupFormContainer} />
+                <ProtectedRoute exact path='/users/:userId' component={ProfileContainer} />
                 <Route exact path='/' component={SplashContainer} />
-                <ProtectedRoute eaxct path='/users/:userId' component={ProfileContainer} />
                 <Redirect to='/' />
             </Switch>
         </div>
