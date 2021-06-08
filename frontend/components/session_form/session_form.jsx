@@ -29,9 +29,9 @@ class SessionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         e.stopPropagation();
-        const user1 = Object.assign({}, this.state);
-        this.props.submitForm(user1)
-            .then((user) => this.props.history.push(`users/${user.id}`));
+        const user = Object.assign({}, this.state);
+        this.props.submitForm(user)
+            .then(() => this.props.history.push('/feed'));
         // deal with .then to handle errors
         this.resetForm();
         this.props.closeModal();
@@ -52,7 +52,7 @@ class SessionForm extends React.Component {
         e.stopPropagation();
         let user = { username: 'username', password: 'password' }
         this.props.login(user)
-            .then((user) => this.props.history.push(`users/${user.id}`));;
+            .then((user) => this.props.history.push(`/feed`));;
         this.props.closeModal();
     }
 
