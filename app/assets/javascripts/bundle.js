@@ -201,6 +201,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _session_form_signup_form_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./session_form/signup_form_container */ "./frontend/components/session_form/signup_form_container.jsx");
 /* harmony import */ var _session_form_login_form_controller__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./session_form/login_form_controller */ "./frontend/components/session_form/login_form_controller.jsx");
 /* harmony import */ var _util_route_util__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../util/route_util */ "./frontend/util/route_util.jsx");
+/* harmony import */ var _feed_feed_container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./feed/feed_container */ "./frontend/components/feed/feed_container.js");
+
 
 
 
@@ -223,6 +225,10 @@ var App = function App() {
     exact: true,
     path: "/users/:userId",
     component: _profile_profile_container__WEBPACK_IMPORTED_MODULE_4__["default"]
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_7__["ProtectedRoute"], {
+    exact: true,
+    path: "/feed",
+    component: _feed_feed_container__WEBPACK_IMPORTED_MODULE_8__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/",
@@ -233,6 +239,94 @@ var App = function App() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
+
+/***/ }),
+
+/***/ "./frontend/components/feed/feed.jsx":
+/*!*******************************************!*\
+  !*** ./frontend/components/feed/feed.jsx ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/react.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+var Feed = /*#__PURE__*/function (_React$Component) {
+  _inherits(Feed, _React$Component);
+
+  var _super = _createSuper(Feed);
+
+  function Feed(props) {
+    _classCallCheck(this, Feed);
+
+    return _super.call(this, props);
+  }
+
+  _createClass(Feed, [{
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "THIS IS THE FEED");
+    }
+  }]);
+
+  return Feed;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Feed);
+
+/***/ }),
+
+/***/ "./frontend/components/feed/feed_container.js":
+/*!****************************************************!*\
+  !*** ./frontend/components/feed/feed_container.js ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _feed__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./feed */ "./frontend/components/feed/feed.jsx");
+
+
+
+var mSTP = function mSTP(state) {
+  return {
+    state: state
+  };
+};
+
+var mDTP = function mDTP(dispatch) {
+  return {};
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mSTP, mDTP)(_feed__WEBPACK_IMPORTED_MODULE_1__["default"]));
 
 /***/ }),
 
@@ -298,9 +392,10 @@ var Greeting = function Greeting(_ref) {
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "myRepertoire"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "header-right"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "dropdown-hack"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "user-icon"
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      id: "user-dropdown",
       className: "user-dropdown"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: ""
@@ -311,7 +406,7 @@ var Greeting = function Greeting(_ref) {
     }, "Profile")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
       className: "header-session-button",
       onClick: logout
-    }, "Log Out")))));
+    }, "Log Out"))))));
   };
 
   return currentUser ? personalGreeting() : sessionLinks();
@@ -707,9 +802,9 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
 
       e.preventDefault();
       e.stopPropagation();
-      var user1 = Object.assign({}, this.state);
-      this.props.submitForm(user1).then(function (user) {
-        return _this3.props.history.push("users/".concat(user.id));
+      var user = Object.assign({}, this.state);
+      this.props.submitForm(user).then(function () {
+        return _this3.props.history.push('/feed');
       }); // deal with .then to handle errors
 
       this.resetForm();
@@ -738,7 +833,7 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
         password: 'password'
       };
       this.props.login(user).then(function (user) {
-        return _this4.props.history.push("users/".concat(user.id));
+        return _this4.props.history.push("/feed");
       });
       ;
       this.props.closeModal();

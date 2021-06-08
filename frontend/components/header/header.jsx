@@ -33,15 +33,16 @@ const Greeting = ({ currentUser, logout, openModal}) => {
                 </Link>
             </div>
             <div className='header-right'>
-                <div className="user-icon">
-                    {/* <img src={window.userIcon} alt="" /> */}
-                </div>
-                <div id='user-dropdown' className='user-dropdown'>
-                    <div className=''>{currentUser.fname} {currentUser.lname}</div>
-                    <ul className='dropdown-links'>
-                        <li><Link to={`/users/${currentUser.id}`} >Profile</Link></li>
-                        <button className='header-session-button' onClick={logout}>Log Out</button>
-                    </ul>
+                <div className='dropdown-hack'>
+                    <div className="user-icon">
+                    </div>
+                    <div className='user-dropdown'>
+                        <div className=''>{currentUser.fname} {currentUser.lname}</div>
+                        <ul className='dropdown-links'>
+                            <li><Link to={`/users/${currentUser.id}`} >Profile</Link></li>
+                            <button className='header-session-button' onClick={logout}>Log Out</button>
+                        </ul>
+                    </div>
                 </div>
                 {/* <button className='header-session-button' onClick={logout}>Log Out</button> */}
             </div>
