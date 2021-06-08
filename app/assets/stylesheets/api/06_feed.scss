@@ -1,0 +1,14 @@
+.feed-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100%;
+}
+
+.feed-greeting {
+    height: 100px;
+    position: relative;
+    top: 300px;
+    text-align: center;
+}

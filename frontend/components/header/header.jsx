@@ -40,6 +40,8 @@ const Greeting = ({ currentUser, logout, openModal}) => {
                         <div className=''>{currentUser.fname} {currentUser.lname}</div>
                         <ul className='dropdown-links'>
                             <li><Link to={`/users/${currentUser.id}`} >Profile</Link></li>
+                            <li><Link to={`/feed`} >Feed</Link></li>
+                            <li><Link to={`/`} >Home</Link></li>
                             <button className='header-session-button' onClick={logout}>Log Out</button>
                         </ul>
                     </div>

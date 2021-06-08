@@ -4,7 +4,8 @@ import Feed from './feed';
 
 const mSTP = state => {
     return {
-        state: state
+        state: state,
+        user: state.entities.users[state.session.id]
     }
 }
 

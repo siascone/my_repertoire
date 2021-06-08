@@ -5,10 +5,15 @@
     // justify-content: center;
     // background-color: lightgray;
     height: 100%;
+    position: relative;
+    top: 300px;
+    text-align: center;
+
 }
 
 .welcome, .splash-blurb {
     margin: 5px auto;
+    
 }
 
 .welcome {
@@ -17,5 +22,6 @@
 }
 
 .splash-blurb {
-    width: 70%;
+    width: 40%;
+    
 }

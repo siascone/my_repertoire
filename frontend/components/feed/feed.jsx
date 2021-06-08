@@ -7,8 +7,11 @@ class Feed extends React.Component {
 
     render() {
         return (
-            <div>
-                THIS IS THE FEED
+            <div className='feed-main'>
+                <div className='feed-greeting'>
+                    <h3>Hello, {this.props.user.fname}</h3>
+                    <h5>Your feed is coming soon.</h5>
+                </div>
             </div>
         )
     }

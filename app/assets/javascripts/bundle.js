@@ -291,7 +291,11 @@ var Feed = /*#__PURE__*/function (_React$Component) {
   _createClass(Feed, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "THIS IS THE FEED");
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "feed-main"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "feed-greeting"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Hello, ", this.props.user.fname), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "Your feed is coming soon.")));
     }
   }]);
 
@@ -318,7 +322,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var mSTP = function mSTP(state) {
   return {
-    state: state
+    state: state,
+    user: state.entities.users[state.session.id]
   };
 };
 
@@ -403,7 +408,11 @@ var Greeting = function Greeting(_ref) {
       className: "dropdown-links"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
       to: "/users/".concat(currentUser.id)
-    }, "Profile")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    }, "Profile")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      to: "/feed"
+    }, "Feed")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      to: "/"
+    }, "Home")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
       className: "header-session-button",
       onClick: logout
     }, "Log Out"))))));
@@ -510,96 +519,68 @@ var Profile = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "profile-main"
+        className: "feed-main"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "user-details"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "user-image"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "user-info"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "user-name"
-      }, this.props.user.fname, " ", this.props.user.lname), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "user-title"
-      }, "Title: (ex: Soprano)"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "user-affilates"
-      }, "Affilated Companies: (ex: SF Opera) "))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "user-content"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "user-repertoire"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "user-audio"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "user-content-header"
-      }, "My Audio Files:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "user-audio-grid"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "audio-file"
-      }, "Audio file will go here"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "audio-file"
-      }, "Audio file will go here"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "audio-file"
-      }, "Audio file will go here"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "audio-file"
-      }, "Audio file will go here"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "audio-file"
-      }, "Audio file will go here"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "audio-file"
-      }, "Audio file will go here"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "audio-file"
-      }, "Audio file will go here"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "audio-file"
-      }, "Audio file will go here"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "audio-file"
-      }, "Audio file will go here"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "user-video"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "user-content-header"
-      }, "My Videos:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "user-video-grid"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "video-file"
-      }, "Video file will go here"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "video-file"
-      }, "Video file will go here"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "video-file"
-      }, "Video file will go here"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "video-file"
-      }, "Video file will go here"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "video-file"
-      }, "Video file will go here"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "video-file"
-      }, "Video file will go here"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "video-file"
-      }, "Video file will go here"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "video-file"
-      }, "Video file will go here"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "video-file"
-      }, "Video file will go here")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "user-posts"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "user-content-header"
-      }, "My Posts"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "user-posts-grid"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "post"
-      }, "A post will go here"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "post"
-      }, "A post will go here"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "post"
-      }, "A post will go here"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "post"
-      }, "A post will go here"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "post"
-      }, "A post will go here"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "post"
-      }, "A post will go here"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "post"
-      }, "A post will go here"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "post"
-      }, "A post will go here"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "post"
-      }, "A post will go here")))));
+        className: "feed-greeting"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Hello, ", this.props.user.fname), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "Your profile is coming soon."))); //     return (
+      //         <div className="profile-main">
+      //             <div className="user-details">
+      //                 <div className="user-image">
+      //                 </div>
+      //                 <div className="user-info">
+      //                     <p className="user-name">{this.props.user.fname} {this.props.user.lname}</p>
+      //                     <p className="user-title">Title: (ex: Soprano)</p>
+      //                     <p className="user-affilates">Affilated Companies: (ex: SF Opera) </p>
+      //                 </div>
+      //             </div>
+      //             <div className="user-content">
+      //                 <div className="user-repertoire">
+      //                     <div className="user-audio">
+      //                         <p className="user-content-header">My Audio Files:</p>
+      //                         <div className="user-audio-grid">
+      //                             <p className="audio-file">Audio file will go here</p>
+      //                             <p className="audio-file">Audio file will go here</p>
+      //                             <p className="audio-file">Audio file will go here</p>
+      //                             <p className="audio-file">Audio file will go here</p>
+      //                             <p className="audio-file">Audio file will go here</p>
+      //                             <p className="audio-file">Audio file will go here</p>
+      //                             <p className="audio-file">Audio file will go here</p>
+      //                             <p className="audio-file">Audio file will go here</p>
+      //                             <p className="audio-file">Audio file will go here</p>
+      //                         </div>
+      //                     </div>
+      //                     <div className="user-video">
+      //                         <p className="user-content-header">My Videos:</p>
+      //                         <div className="user-video-grid">
+      //                             <p className="video-file">Video file will go here</p>
+      //                             <p className="video-file">Video file will go here</p>
+      //                             <p className="video-file">Video file will go here</p>
+      //                             <p className="video-file">Video file will go here</p>
+      //                             <p className="video-file">Video file will go here</p>
+      //                             <p className="video-file">Video file will go here</p>
+      //                             <p className="video-file">Video file will go here</p>
+      //                             <p className="video-file">Video file will go here</p>
+      //                             <p className="video-file">Video file will go here</p>
+      //                         </div>
+      //                     </div>
+      //                 </div>
+      //                 <div className="user-posts">
+      //                     <p className="user-content-header">My Posts</p>
+      //                     <div className="user-posts-grid">
+      //                         <p className="post">A post will go here</p>
+      //                         <p className="post">A post will go here</p>
+      //                         <p className="post">A post will go here</p>
+      //                         <p className="post">A post will go here</p>
+      //                         <p className="post">A post will go here</p>
+      //                         <p className="post">A post will go here</p>
+      //                         <p className="post">A post will go here</p>
+      //                         <p className="post">A post will go here</p>
+      //                         <p className="post">A post will go here</p>
+      //                     </div>
+      //                 </div>
+      //             </div>
+      //         </div>
+      //     )
     }
   }]);
 
@@ -699,7 +680,8 @@ var mSTP = function mSTP(state, ownProps) {
     formType: 'Login',
     navLink: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
       to: "/signup"
-    }, "Sign Up")
+    }, "Sign Up"),
+    history: ownProps.history
   };
 };
 
@@ -829,10 +811,10 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
       e.preventDefault();
       e.stopPropagation();
       var user = {
-        username: 'username',
+        username: 'guest',
         password: 'password'
       };
-      this.props.login(user).then(function (user) {
+      this.props.login(user).then(function () {
         return _this4.props.history.push("/feed");
       });
       ;
@@ -892,7 +874,7 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Don't have an account? ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
           className: "login-option",
           to: "/signup"
-        }, "Sign up for free today!")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Or export as a ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        }, "Sign up for free today!")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Or explore as a ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
           className: "guest-login",
           onClick: this.demoLogin
         }, "Guest")));
@@ -904,7 +886,7 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Already have an account? ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
           className: "login-option",
           to: "/login"
-        }, "Login")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Or export as a ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        }, "Login")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Or explore as a ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
           className: "guest-login",
           onClick: this.demoLogin
         }, "Guest")));
@@ -978,7 +960,8 @@ var mSTP = function mSTP(state, ownProps) {
     formType: 'Sign Up!',
     navLink: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
       to: "/login"
-    }, "Login")
+    }, "Login"),
+    history: ownProps.history
   };
 };
 
@@ -1060,9 +1043,9 @@ var Splash = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "splash"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
         className: "welcome"
-      }, "Welcome to myRepertoire"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      }, "Welcome to myRepertoire"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
         className: "splash-blurb"
       }, "myRepertoire is web application designed as a supportive community network for performing artists. This will be a place where artists can showcase their repertoire, share their achievements and affiliated organizations and track their progress."));
     }
