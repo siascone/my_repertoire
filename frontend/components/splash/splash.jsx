@@ -16,14 +16,14 @@ class Splash extends React.Component {
 
         return (
             <div className='splash'>
-                <p className='welcome'>Welcome to myRepertoire</p>
-                <p className='splash-blurb'>
+                <h3 className='welcome'>Welcome to myRepertoire</h3>
+                <h5 className='splash-blurb'>
                     myRepertoire is web application designed as a supportive 
                     community network for performing artists. This will be a 
                     place where artists can showcase their repertoire, share 
                     their achievements and affiliated organizations and track 
                     their progress.
-                </p>
+                </h5>
             </div>
         )
     }

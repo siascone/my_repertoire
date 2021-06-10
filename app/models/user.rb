@@ -45,4 +45,8 @@ def self.find_by_credentials(username, password)
     end
     self.session_token
   end
+
+  has_many :posts,
+    foreign_key: :user_id,
+    class_name: :Post
 end

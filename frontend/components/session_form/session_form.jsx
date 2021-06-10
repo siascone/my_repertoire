@@ -50,9 +50,9 @@ class SessionForm extends React.Component {
     demoLogin(e) {
         e.preventDefault();
         e.stopPropagation();
-        let user = { username: 'username', password: 'password' }
+        let user = { username: 'guest', password: 'password' }
         this.props.login(user)
-            .then((user) => this.props.history.push(`/feed`));;
+            .then(() => this.props.history.push(`/feed`));;
         this.props.closeModal();
     }
 
@@ -111,7 +111,7 @@ class SessionForm extends React.Component {
         if (this.props.formType === 'Login') {
             option = <div className="login-or-signup">
                         <p>Don't have an account? <Link className='login-option' to="/signup">Sign up for free today!</Link></p>
-                        <p>Or export as a <a className="guest-login" onClick={this.demoLogin}>Guest</a></p>
+                        <p>Or explore as a <a className="guest-login" onClick={this.demoLogin}>Guest</a></p>
 
                     </div>
         }
@@ -119,7 +119,7 @@ class SessionForm extends React.Component {
         if (this.props.formType === 'Sign Up!') {
             option = <div className='login-or-signup'>
                         <p>Already have an account? <Link className='login-option' to="/login">Login</Link></p>
-                        <p>Or export as a <a className="guest-login" onClick={this.demoLogin}>Guest</a></p>
+                        <p>Or explore as a <a className="guest-login" onClick={this.demoLogin}>Guest</a></p>
                     </div>
         }
 
