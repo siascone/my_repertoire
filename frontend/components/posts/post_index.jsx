@@ -17,6 +17,7 @@ class PostIndex extends React.Component {
             <div>
                 <CreatePostFormContainer />
                 <ul className="post-list">
+                    <h4>Posts</h4>
                     {
                         this.props.posts.map(post => (
                             <PostIndexItem 
