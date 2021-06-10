@@ -25,9 +25,9 @@ class PostForm extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="post-main">
                 <h3>{this.props.formType} a Post!</h3>
-                <form onSubmit={this.handleSubmit}>
+                <form className='post-form'onSubmit={this.handleSubmit}>
                     <label>
                         Title:
                         <input type="text" 

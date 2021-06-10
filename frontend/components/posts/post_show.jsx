@@ -7,11 +7,16 @@ class PostShow extends React.Component {
     }
 
     render() {
+
+        if (!this.props.post) {
+            return null;
+        }
+
         return (
-            <div>
+            <div className='post-show'>
                 <h2>{this.props.post.title}</h2>
                 <p>{this.props.post.body}</p>
-                <Link to="/">Home</Link>
+                <Link className='posts-link' to="/posts">Back to Posts</Link>
             </div>
         )
     }
