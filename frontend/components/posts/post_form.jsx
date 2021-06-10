@@ -12,6 +12,11 @@ class PostForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault()
         this.props.action(this.state)
+            .then(() => {
+                if (this.props.formType === "Update") {
+                    this.props.history.push(`/posts/${this.state.id}`);
+                }
+            })
     }
 
     update(field) {

@@ -32,9 +32,9 @@ const App = () => {
                 <ProtectedRoute exact path='/users/:userId' component={ProfileContainer} />
                 <ProtectedRoute exact path='/feed' component={FeedContainer} />
                 {/* post test routes */}
-                <Route exact path='/posts' component={PostIndexContainer} />
-                <Route exact path='/posts/postId' component={PostShowContainer} />
-                <Route exact path='/posts/postId/edit' component={EditPostFormContainer} />
+                <ProtectedRoute exact path='/posts/:postId/edit' component={EditPostFormContainer} />
+                <ProtectedRoute exact path='/posts/:postId' component={PostShowContainer} />
+                <ProtectedRoute exact path='/posts' component={PostIndexContainer} />
 
                 <Route exact path='/' component={SplashContainer} />
                 <Redirect to='/' />

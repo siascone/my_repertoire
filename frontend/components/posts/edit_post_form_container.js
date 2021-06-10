@@ -18,6 +18,7 @@ class EditPostForm extends React.Component {
                 action={this.props.action}
                 formType={this.props.formType}
                 post={this.props.post}
+                history={this.props.history}
             />
         )
     }
@@ -25,8 +26,9 @@ class EditPostForm extends React.Component {
 
 const mSTP = (state, ownProps) => {
     return {
-        post: state.entities.post[ownProps.match.params.postId],
-        formType: 'Update'
+        post: state.entities.posts[ownProps.match.params.postId],
+        formType: 'Update',
+        history: ownProps.history
     };
 };
 

@@ -189,8 +189,8 @@ var updatePost = function updatePost(post) {
 };
 var deletePost = function deletePost(postId) {
   return function (dispatch) {
-    return _util_post_api_util__WEBPACK_IMPORTED_MODULE_0__["deletePost"](postId).then(function () {
-      return removePost(postId);
+    return _util_post_api_util__WEBPACK_IMPORTED_MODULE_0__["deletePost"](postId).then(function (post) {
+      return dispatch(removePost(post.id));
     });
   };
 };
@@ -317,18 +317,18 @@ var App = function App() {
     exact: true,
     path: "/feed",
     component: _feed_feed_container__WEBPACK_IMPORTED_MODULE_11__["default"]
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_10__["ProtectedRoute"], {
+    exact: true,
+    path: "/posts/:postId/edit",
+    component: _posts_edit_post_form_container__WEBPACK_IMPORTED_MODULE_8__["default"]
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_10__["ProtectedRoute"], {
+    exact: true,
+    path: "/posts/:postId",
+    component: _posts_post_show_container__WEBPACK_IMPORTED_MODULE_7__["default"]
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_10__["ProtectedRoute"], {
     exact: true,
     path: "/posts",
     component: _posts_post_index_container__WEBPACK_IMPORTED_MODULE_9__["default"]
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
-    exact: true,
-    path: "/posts/postId",
-    component: _posts_post_show_container__WEBPACK_IMPORTED_MODULE_7__["default"]
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
-    exact: true,
-    path: "/posts/postId/edit",
-    component: _posts_edit_post_form_container__WEBPACK_IMPORTED_MODULE_8__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/",
@@ -511,6 +511,8 @@ var Greeting = function Greeting(_ref) {
     }, "Profile")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
       to: "/feed"
     }, "Feed")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      to: "/posts"
+    }, "Posts")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
       to: "/"
     }, "Home")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
       className: "header-session-button",
@@ -671,7 +673,8 @@ var EditPostForm = /*#__PURE__*/function (_React$Component) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_form__WEBPACK_IMPORTED_MODULE_2__["default"], {
         action: this.props.action,
         formType: this.props.formType,
-        post: this.props.post
+        post: this.props.post,
+        history: this.props.history
       });
     }
   }]);
@@ -681,8 +684,9 @@ var EditPostForm = /*#__PURE__*/function (_React$Component) {
 
 var mSTP = function mSTP(state, ownProps) {
   return {
-    post: state.entities.post[ownProps.match.params.postId],
-    formType: 'Update'
+    post: state.entities.posts[ownProps.match.params.postId],
+    formType: 'Update',
+    history: ownProps.history
   };
 };
 
@@ -757,16 +761,22 @@ var PostForm = /*#__PURE__*/function (_React$Component) {
   _createClass(PostForm, [{
     key: "handleSubmit",
     value: function handleSubmit(e) {
+      var _this2 = this;
+
       e.preventDefault();
-      this.props.action(this.state);
+      this.props.action(this.state).then(function () {
+        if (_this2.props.formType === "Update") {
+          _this2.props.history.push("/posts/".concat(_this2.state.id));
+        }
+      });
     }
   }, {
     key: "update",
     value: function update(field) {
-      var _this2 = this;
+      var _this3 = this;
 
       return function (e) {
-        return _this2.setState(_defineProperty({}, field, e.currentTarget.value));
+        return _this3.setState(_defineProperty({}, field, e.currentTarget.value));
       };
     }
   }, {
@@ -930,11 +940,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var PostIndexItem = function PostIndexItem(props) {
+  // debugger
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "/posts/".concat(props.post.id)
-  }, props.post.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+  }, props.post.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "/posts/".concat(props.post.id, "/edit")
-  }, "Edit"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+  }, "Edit"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     onClick: function onClick() {
       return props.deletePost(props.post.id);
     }
@@ -1816,9 +1827,9 @@ var PostsReducer = function PostsReducer() {
       return newState;
 
     case _actions_post_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_POST"]:
-      nextState = Object.assign({}, state);
-      delete nextState[action.postId];
-      return nextState;
+      newState = Object.assign({}, state);
+      delete newState[action.postId];
+      return newState;
 
     default:
       return state;
