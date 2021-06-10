@@ -11,7 +11,7 @@ class Api::PostsController < ApplicationController
 
     def create 
         @post = current_user.posts.new(post_params)
-        @post.user_id = current_user.id;
+        @post.user_id = current_user.id
         if @post.save
             render :show
         else
@@ -26,6 +26,7 @@ class Api::PostsController < ApplicationController
             render :show 
         else
             render json: @post.errors.full_messages, status: 422
+        end
     end
 
     def destroy 
@@ -35,6 +36,7 @@ class Api::PostsController < ApplicationController
             render :show 
         else
             render json: @post.errors.full_messages, status: 422
+        end
     end 
 
     private
